@@ -20,6 +20,7 @@ class CreateUrlsTable extends Migration
             $table->string('title', 191)->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
+            $table->integer('view')->default(0);
             $table->string('status',10)->default('active');
             $table->timestamps();
         });
