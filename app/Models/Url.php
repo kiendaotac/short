@@ -9,5 +9,5 @@ class Url extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['path', 'url', 'title', 'description', 'image', 'view', 'status'];
+    protected $fillable = ['user_id', 'path', 'url', 'title', 'description', 'image', 'view', 'status'];
 }
