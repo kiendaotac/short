@@ -15,6 +15,7 @@ class CreateUrlsTable extends Migration
     {
         Schema::create('urls', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->default(1);
             $table->string('path', 191)->unique();
             $table->string('url', 191);
             $table->string('title', 191)->nullable();

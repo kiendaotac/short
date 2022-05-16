@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Backend\Url;
 
 use App\Models\Url;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -37,6 +38,7 @@ class Create extends Component
         $imageUrl = strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' ? Str::start($imageUrl, 'storage/') : $imageUrl;
 
         Url::create([
+            'user_id'     => Auth::id(),
             'path'        => $this->path ?: Str::random(8),
             'url'         => $this->url,
             'title'       => $this->title,
